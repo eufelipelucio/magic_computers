@@ -1,0 +1,43 @@
+<h2 class="contato-title">Entre em contato</h2>
+<section class="contato__form">
+  <form [formGroup]="FORMCONTATO" (ngSubmit)="enviarFormulario()">
+    <div *ngFor="let cont of contatoForm">
+      <input
+        type="{{cont.type}}"
+        placeholder="{{cont.placeholder}}"
+        name="{{cont.nome}}"
+        formControlName="{{cont.nome}}"
+        [class.valid]="FORMCONTATO.controls[cont.nome].valid"
+        [class.invalid]="FORMCONTATO.controls[cont.nome].invalid && 
+            (FORMCONTATO.controls[cont.nome].touched || FORMCONTATO.controls[cont.nome].dirty) "
+      />
+      <div
+        *ngIf="FORMCONTATO.controls[cont.nome].invalid && 
+                (FORMCONTATO.controls[cont.nome].touched || FORMCONTATO.controls[cont.nome].dirty)"
+      >
+      
+        <small *ngIf="FORMCONTATO.controls[cont.nome].hasError(cont.nome === 'email'?'email':'minLength')">
+          {{cont.errorType}}
+        </small>
+        <small *ngIf="FORMCONTATO.controls[cont.nome].hasError('required')">
+            {{cont.errorRequired}}
+        </small>
+        
+        
+      </div>
+    </div>
+
+    <button [disabled]="!FORMCONTATO.valid" class="contato__btn">Enviar</button>
+  </form>
+  <address class="contato__address">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113143.48993305836!2d-48.63072923927143!3d-27.601773422617555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952738248efc5a5b%3A0x25bd9c99b58228da!2sCentro%2C%20Florian%C3%B3polis%20-%20SC!5e0!3m2!1spt-BR!2sbr!4v1660931059959!5m2!1spt-BR!2sbr"
+      width="600"
+      height="450"
+      style="border: 0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </address>
+</section>

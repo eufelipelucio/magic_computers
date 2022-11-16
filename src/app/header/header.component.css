@@ -1,0 +1,85 @@
+.main-header{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:20px 0;
+}
+.main-header__title{
+    font-size:3rem;
+    font-family: 'Roboto', sans-serif;
+}
+.main-header__title--blue{
+    color:var(--secondary);
+}
+.main-header__title--orange{
+    color:var(--primary);
+}
+.container-menu{
+    display:flex;
+    justify-content:center;
+    flex-flow:column wrap;
+
+}
+.main-header__menu{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+}
+
+.main-header__menu ul{
+    display:flex;
+    justify-content:space-between;
+    padding:0;
+    width:100%;
+}
+
+.main-header__menu a{
+    font-weight:bold;
+    font-size:1.2rem;
+    font-family: 'Roboto', sans-serif;
+}
+.main-header__menu a:hover{
+    color:var(--primary);
+    transition:all 0.3s;
+    cursor:pointer;
+}
+.search-form{
+    height:44px;
+    display:flex;
+}
+.search-form input{
+    box-sizing:border-box;
+    height:44px;
+    padding:20px;
+    flex:1;
+    background-color:#f0f0f0;
+    color:var(--secondary);
+    border:none;
+    transition:all 0.3s ease-in-out;
+    font-size:1.2rem;
+    border-radius:5px 0 0 5px;
+}
+.search-form input:focus{
+    background-color:var(--primary);
+    outline:none;
+}
+.search-form input::placeholder{
+    color:var(--secondary);
+
+}
+.search-form button{
+    width:56px;
+    height:44px;
+    background-color:var(--primary);
+    border:none;
+    color:var(--secondary);
+    border-radius:0 5px 5px 0;
+
+}
+.badge-cart{
+    background-color:var(--primary);
+    padding:5px 10px;
+    color:var(--secondary);
+    border-radius:4px;
+}
